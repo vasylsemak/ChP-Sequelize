@@ -28,23 +28,27 @@ export default class AdoptionAgency extends Component {
   }
 
   render () {
+    const { petToAdopt } = this.state;
+    const { name, imgUrl } = petToAdopt;
 
     return (
       <div>
-        <h1>Adoptr</h1>
+        <h1>Adopt</h1>
 
         <div className="clearfix">
-          <h3>You are adopting: </h3>
+          <h3>You are adopting: {name}</h3>
         </div>
 
         <div className="clearfix">
 
           <div className="block" id="dogs">
             <h2>Dogs</h2>
+            <PetPreview pets={this.state.dogs} adoptPet={this.adoptPet} />
           </div>
 
           <div className="block" id="cats">
             <h2>Cats</h2>
+            <PetPreview pets={this.state.cats} adoptPet={this.adoptPet} />
           </div>
 
         </div>
