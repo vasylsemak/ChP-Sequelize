@@ -158,13 +158,13 @@ describe('React', () => {
     // has state
     //
 
-    xit('has a `petToPreview` field on its state', () => {
+    it('has a `petToPreview` field on its state', () => {
 
       expect(petPreview.state().petToPreview).to.exist;
 
     });
 
-    xit('has a `petToPreview` field initialized to be an empty object', () => {
+    it('has a `petToPreview` field initialized to be an empty object', () => {
 
       expect(petPreview.state().petToPreview).to.be.an('object');
 
@@ -174,7 +174,7 @@ describe('React', () => {
     // has methods
     //
 
-    xit('has a method called `previewPet`, which takes an event (whose target.value is a pet name), and sets the pet with the matching name on state', () => {
+    it('has a method called `previewPet`, which takes an event (whose target.value is a pet name), and sets the pet with the matching name on state', () => {
 
       // This one will require a little creativity.
       // The event we receive contains the pet name on it, but we want to set a full pet object on state.
@@ -193,7 +193,7 @@ describe('React', () => {
 
     });
 
-    xit('has a method called `adoptSelectedPet`, which invokes the `adoptPet` prop and passes it the pet to preview from state', () => {
+    it('has a method called `adoptSelectedPet`, which invokes the `adoptPet` prop and passes it the pet to preview from state', () => {
 
       expect(petPreview.instance().adoptSelectedPet).to.be.function;
 
@@ -208,13 +208,13 @@ describe('React', () => {
 
     });
 
-    xit('binds the `previewPet` method to the context of the component', () => {
+    it('binds the `previewPet` method to the context of the component', () => {
 
       expect(petPreview.instance().previewPet.hasOwnProperty('prototype')).to.be.false;
 
     });
 
-    xit('binds the `adoptSelectedPet` method to the context of the component', () => {
+    it('binds the `adoptSelectedPet` method to the context of the component', () => {
 
       expect(petPreview.instance().adoptSelectedPet.hasOwnProperty('prototype')).to.be.false;
 
@@ -224,13 +224,13 @@ describe('React', () => {
     // renders components
     //
 
-    xit('renders an <AdoptionForm /> component', () => {
+    it('renders an <AdoptionForm /> component', () => {
 
       expect(petPreview.find(AdoptionForm).length).to.be.equal(1);
 
     });
 
-    xit('renders an <img> element with a `src` prop equal to the pet-to-preview\'s imgUrl', () => {
+    it('renders an <img> element with a `src` prop equal to the pet-to-preview\'s imgUrl', () => {
 
       const taylor = DOGS[0];
       petPreview.setState({ petToPreview: taylor });
@@ -246,19 +246,19 @@ describe('React', () => {
     // passes props
     //
 
-    xit('passes its own `pets` prop down to <AdoptionForm /> as `pets`', () => {
+    it('passes its own `pets` prop down to <AdoptionForm /> as `pets`', () => {
 
       expect(petPreview.find(AdoptionForm).props().pets).to.be.deep.equal(petPreview.instance().props.pets);
 
     });
 
-    xit('passes the `previewPet` method down to <AdoptionForm /> as a prop called `previewPet`', () => {
+    it('passes the `previewPet` method down to <AdoptionForm /> as a prop called `previewPet`', () => {
 
       expect(petPreview.find(AdoptionForm).props().previewPet).to.be.deep.equal(petPreview.instance().previewPet);
 
     });
 
-    xit('passes the `adoptSelectedPet` method down to <AdoptionForm /> as a prop called `adoptSelectedPet`', () => {
+    it('passes the `adoptSelectedPet` method down to <AdoptionForm /> as a prop called `adoptSelectedPet`', () => {
 
       expect(petPreview.find(AdoptionForm).props().adoptSelectedPet).to.be.deep.equal(petPreview.instance().adoptSelectedPet);
 
