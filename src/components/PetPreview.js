@@ -18,7 +18,8 @@ export default class PetPreview extends Component {
     this.setState({ petToPreview: selectedPet });
   }
 
-  adoptSelectedPet() {
+  adoptSelectedPet(event) {
+    event.preventDefault();
     const { petToPreview } = this.state;
     const { adoptPet } = this.props;
     adoptPet(petToPreview);

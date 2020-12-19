@@ -29,7 +29,7 @@ export default class AdoptionAgency extends Component {
 
   render () {
     const { petToAdopt } = this.state;
-    const { name, imgUrl } = petToAdopt;
+    const { name } = petToAdopt;
 
     return (
       <div>

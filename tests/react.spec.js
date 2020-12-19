@@ -193,7 +193,7 @@ describe('React', () => {
 
     });
 
-    it('has a method called `adoptSelectedPet`, which invokes the `adoptPet` prop and passes it the pet to preview from state', () => {
+    xit('has a method called `adoptSelectedPet`, which invokes the `adoptPet` prop and passes it the pet to preview from state', () => {
 
       expect(petPreview.instance().adoptSelectedPet).to.be.function;
 
@@ -284,24 +284,24 @@ describe('React', () => {
     // renders components
     //
 
-    xit('renders a <button> element', () => {
+    it('renders a <button> element', () => {
 
       expect(adoptionForm.find('button').length).to.be.equal(1);
 
     });
 
-    xit('renders a <select> element', () => {
+    it('renders a <select> element', () => {
 
       expect(adoptionForm.find('select').length).to.be.equal(1);
 
     });
 
-    xit('renders an <option> within the <select> for each pet', () => {
+    it('renders an <option> within the <select> for each pet', () => {
 
       expect(adoptionForm.find('select').find('option').length).to.be.equal(CATS.length);
     });
 
-    xit('renders each <option> with a `key` prop and an inner text value equal to that pet\'s name', () => {
+    it('renders each <option> with a `key` prop and an inner text value equal to that pet\'s name', () => {
 
       // Loops through each option in the select
       adoptionForm.find('option').forEach((option, idx) => {
@@ -316,7 +316,7 @@ describe('React', () => {
 
     });
 
-    xit('works for both dogs and cats', () => {
+    it('works for both dogs and cats', () => {
 
       const dogAdoptionForm = shallow(<AdoptionForm pets={DOGS} />);
 
@@ -331,7 +331,7 @@ describe('React', () => {
     // attaches listeners
     //
 
-    xit('attaches the `previewPet` prop as an `onChange` listener for the <select> component', () => {
+    it('attaches the `previewPet` prop as an `onChange` listener for the <select> component', () => {
 
       expect(adoptionForm.find('select').onChange).to.be.function;
 
@@ -348,7 +348,7 @@ describe('React', () => {
 
     });
 
-    xit('attaches the `adoptSelectedPet` prop as an `onClick` listener for the button', () => {
+    it('attaches the `adoptSelectedPet` prop as an `onClick` listener for the button', () => {
 
       expect(adoptionForm.find('button').onClick).to.be.function;
 
